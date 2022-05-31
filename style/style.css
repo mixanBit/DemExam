@@ -1,0 +1,332 @@
+@font-face{
+  font-family: Merriweather;
+  src: url(../fonts/Merriweather/Merriweather-Black.ttf);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Merriweather;
+}
+
+a{
+  text-decoration: none;
+}
+
+button{
+  border: none;
+}
+
+header{
+  box-shadow: 0px 2px 10px rgba(0,0,0,.1);
+}
+
+.header_con{
+  max-width: 1440px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  padding: 0px 10px;
+}
+
+.logo{
+  width: 60px;
+}
+
+.logo img{
+  width: 100%;
+}
+
+.sidebar{
+  position: relative;
+  transition: .5s;
+}
+
+.sidebar_active{
+  right: 0 !important;
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar{
+    position: fixed;
+    top: 0;
+    right: -200px;
+    width: 200px;
+    height: 100vh;
+    background-color: white;
+    box-shadow: 0px 2px 10px rgba(0,0,0,.1);
+  }
+}
+
+.sidebar .btn_sidebar{
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: none;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  grid-gap: 5px;
+  position: absolute;
+  top: 25px;
+  right: 220px;
+  padding: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar .btn_sidebar{
+    display: flex;
+  }
+}
+
+.sidebar .btn_sidebar span{
+  border-radius: 10px;
+  width: 100%;
+  height: 5px;
+  background-color: black;
+}
+
+.sidebar .sidebar_main{
+  display: flex;
+  align-items: center;
+  grid-gap: 15px;
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar_main{
+    flex-direction: column;
+    padding: 15px 0px;
+  }
+}
+
+.sidebar .sidebar_main a{
+  color: black;
+  font-size: 18px;
+}
+
+.sidebar .lk{
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 20px;
+  font-size: 16px;
+  color: black;
+  background-color: #fff;
+  transition: .4s;
+  padding: 10px 15px;
+}
+
+.sidebar .lk:hover{
+  border: 1px solid black;
+  color: white;
+  background-color: black;
+}
+
+.account{
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  grid-gap: 10px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0px 2px 10px rgba(0,0,0,.1);
+}
+
+.auth_btn{
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 20px;
+  font-size: 20px;
+  color: black;
+  background-color: #fff;
+  transition: .4s;
+  padding: 10px 15px;
+}
+
+.auth_btn:hover{
+  border: 1px solid black;
+  color: white;
+  background-color: black;
+}
+
+.reg_btn{
+  cursor: pointer;
+  font-size: 16px;
+  color: black;
+  background-color: white;
+}
+
+/* Модальное окно */
+.modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,.4);
+
+  visibility: hidden;
+  opacity: 0;
+  transition: .4s;
+}
+
+.modal_active{
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.modal_window{
+  position: relative;
+}
+
+/* Формы */
+.form_reg{
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: white;
+  grid-gap: 10px;
+  padding: 15px;
+}
+
+.form_auth{
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: white;
+  grid-gap: 10px;
+  padding: 15px;
+}
+
+.form_reg h1{
+  font-size: 18px;
+}
+
+.auth_input{
+  outline: none;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,.4);
+  width: 100%;
+  height: 30px;
+  font-size: 16px;
+  padding: 0px 7px;
+  transition: .5s;
+}
+
+.reg_input{
+  outline: none;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,.4);
+  width: 100%;
+  height: 30px;
+  font-size: 16px;
+  padding: 0px 7px;
+  transition: .5s;
+}
+
+.pd{
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  grid-gap: 5px;
+  margin: auto;
+  margin-left: 0;
+}
+
+.submit_reg{
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 20px;
+  font-size: 18px;
+  color: black;
+  background-color: #fff;
+  transition: .4s;
+  padding: 5px 7px;
+  margin: auto;
+  margin-right: 0;
+}
+
+.submit_reg:hover{
+  border: 1px solid black;
+  color: white;
+  background-color: black;
+}
+
+/* Ошибки */
+.error{
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -30px;
+  left: 0;
+  font-size: 18px;
+  text-align: center;
+  background-color: red;
+  transition: .5s;
+
+  visibility: hidden;
+  opacity: 0;
+}
+
+.error_auth{
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -30px;
+  left: 0;
+  font-size: 18px;
+  text-align: center;
+  background-color: red;
+  transition: .5s;
+
+  visibility: hidden;
+  opacity: 0;
+}
+
+
+.error_acitve{
+  visibility: visible !important;
+  opacity: 1 !important;
+  top: 0 !important;
+}
+
+.input_error{
+  border: 1px solid red !important;
+}
+
+/* Выход из аккаунта */
+
+
+.exit_btn{
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 20px;
+  font-size: 14px;
+  color: black;
+  background-color: #fff;
+  transition: .4s;
+  padding: 5px 10px;
+}
+
+.exit_btn:hover{
+  border: 1px solid black;
+  color: white;
+  background-color: black;
+}

@@ -1,0 +1,57 @@
+@font-face {
+  font-family: Merriweather;
+  src: url(../fonts/Merriweather/Merriweather-Black.ttf);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Merriweather;
+}
+
+a{
+  text-decoration: none;
+}
+
+body{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.window{
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  grid-gap: 10px;
+  color: white;
+  background-color: green;
+  font-size: 24px;
+  padding: 30px;
+  animation: exit 1s;
+}
+
+.red{
+  background-color: red !important;
+}
+
+.window a{
+  color: white;
+  font-size: 18px;
+}
+
+@keyframes exit{
+  0%{
+    transform: scale(0);
+    opacity: 0;
+  }
+  100%{
+    transform: scale(1);
+    opacity: 1;
+  }
+}
